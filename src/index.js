@@ -47,6 +47,3 @@ result += Math.min(numberTwo, numberFive);
 return result;
 }
 
-function newFunction(partArray) {
-  return partArray.indexOf("!!") > -1;
-}
