@@ -2,16 +2,18 @@ module.exports = function zeros(expression) {
   // your solution
   let array = expression.split("*");
   let result = 0;
+  let stepFactorial = 0;
+  let valueFactorial = 0;
   let numberTwo = 0;
   let numberFive = 0;
   
     for (var i = 0; i < array.length; i++);{
       var partArray = array[i];
   
-      if (partArray.indexOf("!!") > -1) {
+      if (partArray > 0 && partArray.indexOf("!!") > -1) {
       stepFactorial = 2;
       valueFactorial = + partArray.slice(0,-2);
-    } else {
+    } else if (partArray > 0) {
       stepFactorial = 1;
       valueFactorial = + partArray.slice(0,-1);
     }
@@ -42,8 +44,8 @@ module.exports = function zeros(expression) {
       }
     }
   }
+  result += Math.min(numberTwo, numberFive);
 }
-result += Math.min(numberTwo, numberFive);
 return result;
 }
 
